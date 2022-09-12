@@ -1,27 +1,27 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../screens/flow_about_screen.dart';
-import '../screens/flow_find_screen.dart';
 import '../screens/flow_homescreen.dart';
 import '../screens/flow_saved_screen.dart';
+import '../screens/order/order_screen.dart';
 
 class FlowBottomNavBar extends StatefulWidget {
+  const FlowBottomNavBar({Key? key}) : super(key: key);
+
   @override
-  _FlowBottomNavBarState createState() => _FlowBottomNavBarState();
+  State<FlowBottomNavBar> createState() => _FlowBottomNavBarState();
 }
 
 class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
   int currentMenuIndex = 0;
 
   final List<Widget> _selectedMenuOptions = [
-    FlowHomeScreen(),
-    FlowFindScreen(),
-    FlowSavedScreen(),
-    FlowAboutScreen(),
+    const FlowHomeScreen(),
+    const FlowOrderScreen(),
+    const FlowSavedScreen(),
+    const FlowAboutScreen(),
   ];
 
   @override
@@ -33,11 +33,10 @@ class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         type: BottomNavigationBarType.fixed,
         elevation: 0,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black.withOpacity(.3),
+
         currentIndex: currentMenuIndex,
         onTap: (value) {
           currentMenuIndex = value;
@@ -51,45 +50,45 @@ class _FlowBottomNavBarState extends State<FlowBottomNavBar> {
           BottomNavigationBarItem(
             label: ('Home'),
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-home.svg',
-              color: Colors.black.withOpacity(.3),
+              'assets/icons/svgs/home.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-home.svg',
-              color: Colors.black,
+              'assets/icons/svgs/home_alt_filled.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
           ),
           BottomNavigationBarItem(
             label: 'Find',
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-search.svg',
-              color: Colors.black.withOpacity(.3),
+              'assets/icons/svgs/search.svg',
+              color:Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-sr-search.svg',
-              color: Colors.black,
+              'assets/icons/svgs/search_filled.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
           ),
           BottomNavigationBarItem(
             label: 'Saved',
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-heart.svg',
-              color: Colors.black.withOpacity(.3),
+              'assets/icons/svgs/heart.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-heart.svg',
-              color: Colors.black,
+              'assets/icons/svgs/heart_filled.svg',
+              color: Theme.of(context).iconTheme.color,
             ),
           ),
           BottomNavigationBarItem(
             label: 'About',
             icon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-user.svg',
-              color: Colors.black.withOpacity(.3),
+              'assets/icons/svgs/user.svg',
+              color:Theme.of(context).iconTheme.color,
             ),
             activeIcon: SvgPicture.asset(
-              'Assets/icons/svgs/fi-rr-user.svg',
-              color: Colors.black,
+              'assets/icons/svgs/user_filled.svg',
+              color:Theme.of(context).iconTheme.color,
             ),
           ),
         ],

@@ -3,12 +3,15 @@ import 'package:flow/constants.dart';
 import 'package:flutter/material.dart';
 
 class FlowAboutScreen extends StatelessWidget {
+    static const id = "about screen";
+  const FlowAboutScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         children: [
           Column(
@@ -22,14 +25,14 @@ class FlowAboutScreen extends StatelessWidget {
                     Padding(
                       padding:
                           EdgeInsets.symmetric(horizontal: screenWidth * .25),
-                      child: Image(
-                        image: AssetImage('Assets/images/flow_logo.png'),
+                      child: const Image(
+                        image: AssetImage('assets/images/flow_logo.png'),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Text(
+                    const Text(
                        'Find water easily around Bambili',
                     ),
                   ],
@@ -39,10 +42,10 @@ class FlowAboutScreen extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: screenHeight * .07),
                 child: Column(
                   children: [
-                   Text(
+                   const Text(
                       'Developed By'
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     GestureDetector(
@@ -52,7 +55,7 @@ class FlowAboutScreen extends StatelessWidget {
                           context,
                           CustomHeroDialogRoute(
                             builder: (context) {
-                              return TeamFlowNames();
+                              return const TeamFlowNames();
                             },
                           ),
                         );
@@ -73,8 +76,8 @@ class FlowAboutScreen extends StatelessWidget {
                     SizedBox(
                       height: screenHeight * .05,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
                         'This is a project by the Google Developer Student Clubs of the University of Bamenda',
                         textAlign: TextAlign.center,
@@ -118,7 +121,7 @@ class TeamFlowNames extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
-                  children: [
+                  children: const [
                    Text(
                     'Alouzeh Brandone'
                  

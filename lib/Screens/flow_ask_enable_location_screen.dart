@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FlowAskEnableLocation extends StatefulWidget {
+  const FlowAskEnableLocation({Key? key}) : super(key: key);
+
   @override
-  _FlowAskEnableLocationState createState() => _FlowAskEnableLocationState();
+  State<FlowAskEnableLocation> createState() => _FlowAskEnableLocationState();
 }
 
 class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
@@ -13,25 +15,25 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             /// Image and text Area
-            Spacer(),
+            const Spacer(),
             Container(
               padding: EdgeInsets.only(
                   left: screenWidth * .1, right: screenHeight * .15),
               //width: screenWidth * .8,
               child: SvgPicture.asset(
-                'Assets/illustrations/request-location-on.svg',
+                'assets/illustrations/request-location-on.svg',
                 height: screenHeight * .5,
               ),
             ),
 
             //SizedBox(height: 10),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * .1),
               child: Text(
@@ -44,7 +46,7 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
                 ),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * .1),
               child: Text(
@@ -57,7 +59,7 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             ///Allow Permissions Buttons
             Container(
@@ -71,7 +73,7 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
               // ignore: deprecated_member_use
               child: FlatButton(
                 height: 45,
-                child: Text(
+                child: const Text(
                     'Turn it on',
                   
                 ),
@@ -91,12 +93,12 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
                 });
               },
               color: Colors.transparent,
-              child: Text(
+              child: const Text(
                   'Leave off',
                
               ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),

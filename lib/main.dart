@@ -1,5 +1,6 @@
 import 'package:flow/Components/flow_bottom_nav_bar.dart';
 import 'package:flow/firebase_options.dart';
+import 'package:flow/providers/auth_provider.dart';
 import 'package:flow/services/location_service.dart';
 import 'package:flow/services/shared_prefs_methods.dart';
 import 'package:flow/theme.dart';
@@ -17,30 +18,34 @@ void main() async {
   flowSharedPrefs = await SharedPreferences.getInstance();
   loadSavedLocations();
   FlowLocationData().getLocation();
-  SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarIconBrightness: Brightness.dark,
-    ),
-  );
+  // SystemChrome.setSystemUIOverlayStyle(
+  //   SystemUiOverlayStyle(
+  //     statusBarColor: Colors.white,
+  //     statusBarIconBrightness: Brightness.dark,
+  //   ),
+  // );
 
-  runApp(FlowApp());
+  runApp(const FlowApp());
 }
 
 class FlowApp extends StatelessWidget {
+  const FlowApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<FlowWaterSourcesData>(create: (BuildContext context)=> FlowWaterSourcesData()),
-        ChangeNotifierProvider<FlowLocationData>(create: (BuildContext context)=> FlowLocationData())
+        ChangeNotifierProvider<FlowLocationData>(create: (BuildContext context)=> FlowLocationData()),
+        ChangeNotifierProvider<FlowUserData>(create: (BuildContext context) => FlowUserData()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title:  'Flow',
         theme: flowLightTheme(context),
         darkTheme: flowDarkTheme(context),
-        themeMode: ThemeMode.system,
+        themeMode: ThemeMode.light,
+        
         home: FlowBottomNavBar(),
         //  home:MyLocation(),
       ),
