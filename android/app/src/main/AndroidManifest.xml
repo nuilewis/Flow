@@ -7,8 +7,8 @@
         android:label="Flow"
         android:icon="@mipmap/ic_launcher">
        <meta-data
-           android:name="com.google.android.geo.API_KEY"
-           android:value="YOUR GOOGLE MAPS API KEY HERE" />
+           android:name="com.google.android.geo.AIzaSyADR6QtO0nJ5j3SfdAt3POijt4wGeN4AGE"
+           android:value="AIzaSyADR6QtO0nJ5j3SfdAt3POijt4wGeN4AGE" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
