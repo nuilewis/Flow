@@ -21,7 +21,7 @@ class FlowCircularButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.zero,
-        primary: bgColor ?? Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: bgColor ?? Theme.of(context).scaffoldBackgroundColor,
         shape: const CircleBorder(),
         elevation: 0,
       ),
@@ -62,7 +62,7 @@ class FlowButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.zero,
-        primary: isSecondary!? Colors.transparent:   bgColor ?? Theme.of(context).primaryColor,
+        backgroundColor: isSecondary!? Colors.transparent:   bgColor ?? Theme.of(context).primaryColor,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(kDefaultPadding2x),
             side: isSecondary!? BorderSide(width: 1.5, color: bgColor ?? Theme.of(context).primaryColor) : BorderSide.none

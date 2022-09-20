@@ -71,8 +71,8 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
                 color: kBlue,
               ),
               // ignore: deprecated_member_use
-              child: FlatButton(
-                height: 45,
+              child: TextButton(
+               // height: 45,
                 child: const Text(
                     'Turn it on',
                   
@@ -86,13 +86,13 @@ class _FlowAskEnableLocationState extends State<FlowAskEnableLocation> {
               ),
             ),
             // ignore: deprecated_member_use
-            FlatButton(
+            TextButton(
               onPressed: () {
                 WidgetsBinding.instance.addPostFrameCallback((_) {
                   Navigator.of(context).pop();
                 });
               },
-              color: Colors.transparent,
+             // color: Colors.transparent,
               child: const Text(
                   'Leave off',
                

@@ -69,8 +69,8 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
                 color: Colors.white,
               ),
               // ignore: deprecated_member_use
-              child: FlatButton(
-                height: 45,
+              child: TextButton(
+              //  height: 45,
                 child: const Text(
                     'Allow Permissions',
                    
@@ -87,13 +87,13 @@ class _FlowAskPermissionsState extends State<FlowAskPermissions> {
               height: 5,
             ),
             // ignore: deprecated_member_use
-            FlatButton(
+            TextButton(
               onPressed: () {
                 WidgetsBinding.instance.addPostFrameCallback((_) {
                   Navigator.of(context).pop();
                 });
               },
-              color: Colors.transparent,
+             // color: Colors.transparent,
               child: const Text(
                   'Deny',
                 
